@@ -14,3 +14,10 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::prefix('afirmador')->group(function () {
+    Route::get('ver/{id}', [
+      'uses'  =>  'TestController@show',
+       'as'   =>  'nuevoAfirmador'
+    ]);
+});
