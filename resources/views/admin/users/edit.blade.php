@@ -1,22 +1,9 @@
 
 @extends('admin.template.main')
 
-@section('title', 'crear usuario')
+@section('title', 'Editar usuario :' . $user->name)
 
 @section('content')
-
-	@if(count($errors) > 0 )
-		
-		@foreach($errors->all() as $errors)
-
-		@endforeach
-	@endif
-
-
-
-
-
-
 <div class="container">
 	<div class="col-sm-6 col-sm-offset-3">
 		<div class="panel panel-default">
@@ -25,21 +12,17 @@
 			</div>
 
 			<div class="panel-body">
-				{!! Form::open(['route' => 'users.store', 'method' => 'POST']) !!}
+				{!! Form::open(['route' => ['users.update', $user], 'method' => 'PUT']) !!}
 					<div class="form-group">
 						{!! Form::label('name','nombre') !!}
-						{!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Nombre']) !!}
+						{!! Form::text('name', $user->name, ['class' => 'form-control', 'placeholder' => 'Nombre']) !!}
 					</div>
 
 					<div class="form-group">
 						{!! Form::label('email','Email') !!}
-						{!! Form::text('email', null, ['class' => 'form-control', 'placeholder' => 'example@gmail.com']) !!}
+						{!! Form::text('email', $user->email, ['class' => 'form-control', 'placeholder' => 'example@gmail.com']) !!}
 					</div>
 
-					<div class="form-group">
-						{!! Form::label('password','Contraseña') !!}
-						{!! Form::password('password', ['class' => 'form-control']) !!}
-					</div>
 
 					<div class="form-group">
 						{!! Form::label('type','Tipo') !!}

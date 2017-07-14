@@ -13,7 +13,8 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse navbar-elements" id="menu">
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="home.php">Home <span class="sr-only">(current)</span></a></li>
+        <li><a href="{{ route('users.index') }}">Usuario<span class="sr-only">(current)</span></a></li>
+       
         
       </ul>
     </div><!-- /.navbar-collapse -->
